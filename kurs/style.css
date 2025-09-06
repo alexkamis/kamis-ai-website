@@ -1,50 +1,64 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #fafafa;
-  color: #333;
-  margin: 0;
-  padding: 0;
+:root{
+  --bg:#fafafa;
+  --text:#333;
+  --card:#fff;
+  --brand:#5a3ea6; /* Kamis Works-lila */
+  --brand-d:#472f88;
+  --border:#e7e7e7;
 }
 
-.container {
-  max-width: 600px;
-  margin: 5rem auto;
-  padding: 2rem;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.55;
 }
 
-h1 {
-  color: #5a3ea6; /* Kamis Works-lila */
-  margin-bottom: 1rem;
+.container{
+  max-width:720px;
+  margin:4rem auto;
+  padding:0 1.25rem;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
+h1{color:var(--brand); margin:0 0 .5rem}
+.lead{font-size:1.05rem; margin:0 0 2rem}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:1.5rem;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+  margin-bottom:2rem;
 }
 
-label {
-  margin-top: 1rem;
+form{display:grid; gap:.75rem; grid-template-columns:1fr}
+label{font-weight:600}
+input{
+  padding:.65rem .75rem;
+  border:1px solid #ccc;
+  border-radius:6px;
+  font-size:1rem;
 }
+button{
+  margin-top:.5rem;
+  padding:.8rem 1rem;
+  background:var(--brand);
+  color:#fff;
+  border:0;
+  border-radius:6px;
+  font-weight:700;
+  cursor:pointer;
+}
+button:hover{background:var(--brand-d)}
 
-input {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
+.hint{display:block; margin-top:.5rem; color:#666}
 
-button {
-  margin-top: 1.5rem;
-  padding: 0.75rem;
-  background: #5a3ea6;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+.footer{margin-top:2rem; text-align:center; color:#666}
+.footer a{color:var(--brand); text-decoration:none}
+.footer a:hover{text-decoration:underline}
 
-button:hover {
-  background: #472f88;
-}
+/* honeypot gömd */
+.hp{position:absolute; left:-9999px}

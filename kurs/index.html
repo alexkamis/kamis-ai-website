@@ -2,25 +2,64 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bygg ditt varumärke med AI – Kursanmälan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bygg ditt varumärke med AI – Onlinekurs för företagare</title>
+
+  <!-- Meta / Social -->
+  <meta name="description" content="En onlinekurs där du lär dig använda ChatGPT för att skapa kommunikation som fungerar. För företagare som vill nå ut smartare och spara tid och pengar." />
+  <meta property="og:title" content="Bygg ditt varumärke med AI" />
+  <meta property="og:description" content="Lär dig använda ChatGPT för effektiv kommunikation. Anmäl intresse." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kamis.ai/kurs/" />
+  <link rel="canonical" href="https://kamis.ai/kurs/"/>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Bygg ditt varumärke med AI</h1>
-    <p>En onlinekurs för företagare som vill nå ut smartare och spara tid och pengar. 
-    Lämna din e-postadress för att få info när anmälan öppnar.</p>
+  <main class="container">
+    <header>
+      <h1>Bygg ditt varumärke med AI</h1>
+      <p class="lead">
+        AI är ett av de mest kraftfulla verktygen du kan ha som företagare.
+        I den här onlinekursen jobbar du med ditt varumärke och lär dig skapa
+        träffsäker kommunikation med hjälp av ChatGPT. Investera i en rolig
+        och lärorik förmiddag som sparar både tid och pengar.
+      </p>
+    </header>
 
-    <form name="kursintresse" method="POST" data-netlify="true" action="/tack/">
-      <label for="name">Namn</label>
-      <input type="text" id="name" name="name" required />
+    <section class="card">
+      <h2>Anmäl intresse</h2>
+      <p>Kursen är online och tre timmar lång. Max 30 platser.</p>
 
-      <label for="email">E-post</label>
-      <input type="email" id="email" name="email" required />
+      <!-- Netlify Form (viktig: form-name + honeypot + action) -->
+      <form name="kursintresse"
+            method="POST"
+            action="/tack/"
+            data-netlify="true"
+            netlify-honeypot="bot-field">
 
-      <button type="submit">Anmäl intresse</button>
-    </form>
-  </div>
+        <!-- krävs för Netlify: måste matcha formens namn -->
+        <input type="hidden" name="form-name" value="kursintresse" />
+
+        <!-- honeypot mot spam -->
+        <p class="hp" aria-hidden="true">
+          <label>Fyll inte i detta: <input name="bot-field" /></label>
+        </p>
+
+        <label for="name">Namn</label>
+        <input id="name" name="name" autocomplete="name" required />
+
+        <label for="email">E-post</label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+
+        <button type="submit">Skicka intresseanmälan</button>
+      </form>
+      <small class="hint">Vi hör av oss när anmälan öppnar.</small>
+    </section>
+
+    <footer class="footer">
+      <p>Mer om mig och tjänster: <a href="https://kamis.works" target="_blank" rel="noopener">kamis.works</a></p>
+    </footer>
+  </main>
 </body>
 </html>
