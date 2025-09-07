@@ -9,7 +9,7 @@ body{
   font-family:'Plus Jakarta Sans', system-ui,-apple-system,Segoe UI,Arial,sans-serif;
   color:var(--text);
   background-color:var(--bg);
-  font-size:clamp(15px, calc(14px + 0.3vw), 18px); /* responsiv basstorlek */
+  font-size:16px; /* fast basstorlek enligt önskemål */
   line-height:1.6; /* jämnt radavstånd överallt */
   /* Katt i bakgrunden */
   background-image:url('../images/cat.png');
