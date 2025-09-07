@@ -1,20 +1,66 @@
+/* Bas */
 :root{
-  --bg:#fafafa; --text:#222; --card:#fff; --border:#e7e7e7;
-  --brand:#5a3ea6; --brand-dark:#472f88;
+  --text:#111;
+  --bg:#c6d0c2;           /* fallback om bilden inte laddar */
+  --border:#111;
 }
-*{box-sizing:border-box} html,body{margin:0;padding:0}
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-.container{max-width:760px;margin:48px auto;padding:0 20px}
-h1{color:var(--brand);margin:0 0 8px}
-.lead{font-size:1.075rem;margin:0 0 24px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px;margin:18px 0;box-shadow:0 2px 10px rgba(0,0,0,.04)}
-.info ul{margin:0;padding-left:18px}
-form{display:grid;gap:12px}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background-color:var(--bg);
+  /* Bilden ligger i /images sett från denna css som ligger i /kurs */
+  background-image:url("../images/coffee-9379521.jpeg");
+  background-repeat:no-repeat;
+  background-position:right 24px bottom 24px;
+  background-size:clamp(160px, 26vw, 420px);
+}
+.container{max-width:820px;margin:56px auto;padding:0 20px}
+h1{margin:0 0 8px 0;font-size:clamp(28px,4vw,40px)}
+h2{margin:24px 0 8px 0}
+.lead{font-size:1.1rem;line-height:1.6;margin:0 0 8px}
+
+/* Läs mer */
+.more{margin:8px 0 24px}
+.more summary{
+  cursor:pointer;
+  font-weight:700;
+  display:inline-block;
+  margin:8px 0 12px;
+  list-style:none;
+}
+.more summary::-webkit-details-marker{display:none}
+.more summary:after{content:"▼"; margin-left:8px; font-size:.8rem}
+.more[open] summary:after{content:"▲"}
+.more-content p{margin:0 0 12px}
+
+/* Formulär (svart text, transparenta fält) */
+.form-wrap{margin:32px 0 40px}
+.form-wrap form{display:grid;gap:10px;max-width:560px}
 label{font-weight:600}
-input{padding:10px;border:1px solid #ccc;border-radius:6px;font-size:1rem}
-button{padding:12px 14px;background:var(--brand);color:#fff;border:0;border-radius:6px;font-weight:700;cursor:pointer}
-button:hover{background:var(--brand-dark)}
-.footer{margin-top:24px;text-align:center;color:#666}
-.footer a{color:var(--brand);text-decoration:none}
-.footer a:hover{text-decoration:underline}
+input{
+  padding:10px 12px;
+  border:1.5px solid var(--border);
+  border-radius:6px;
+  background:transparent;
+  color:var(--text);
+  font-size:1rem;
+}
+.ghost-btn{
+  padding:12px 14px;
+  background:transparent;
+  color:var(--text);
+  border:2px solid var(--border);
+  border-radius:6px;
+  font-weight:700;
+  cursor:pointer;
+}
+.ghost-btn:hover{filter:brightness(0.9)}
 .hp{position:absolute;left:-9999px}
+
+/* Responsiv bakgrundsstorlek och inre marginaler */
+@media (max-width:700px){
+  body{background-position:right 12px bottom 12px}
+  .container{margin:32px auto 48px}
+}
