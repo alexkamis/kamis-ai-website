@@ -1,9 +1,4 @@
-# Tvinga apex (kamis.ai) till www + https
 http://kamis.ai/*       https://www.kamis.ai/:splat   301
 https://kamis.ai/*      https://www.kamis.ai/:splat   301
-
-# Tvinga http://www till https://www
 http://www.kamis.ai/*   https://www.kamis.ai/:splat   301
-
-# Omdirigera startsidan till /kurs
-/                      /kurs                         301
+/                       /kurs                         301
