@@ -6,55 +6,55 @@
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-family:'Plus Jakarta Sans', system-ui,-apple-system,Segoe UI,Arial,sans-serif;
   color:var(--text);
   background-color:var(--bg);
+  font-size:16px; /* basstorlek */
+  line-height:1.6; /* jämnt radavstånd överallt */
+  /* Katt i bakgrunden */
+  background-image:url('../images/cat.png');
+  background-repeat:no-repeat;
+  background-position:right 24px bottom 90px;
+  background-size:clamp(140px, 22vw, 380px);
 }
 
 /* layout */
-.container{max-width:820px;margin:56px auto;padding:0 20px; position:relative; z-index:1}
-h1{margin:0 0 8px 0;font-size:clamp(28px,4vw,40px)}
+.container{max-width:980px;margin:56px auto;padding:0 20px; position:relative; z-index:1}
+.content-card{max-width:640px;margin:0 auto; padding:0}
+h1{margin:0 0 12px 0;font-size:70px;line-height:1.15}
 h2{margin:24px 0 8px 0}
-.lead{font-size:1.1rem;line-height:1.6;margin:0 0 8px}
-
-/* Läs mer */
-.more{margin:8px 0 24px}
-.more summary{
-  cursor:pointer; font-weight:700; display:inline-block; margin:8px 0 12px; list-style:none;
-}
-.more summary::-webkit-details-marker{display:none}
-.more summary:after{content:"▼"; margin-left:8px; font-size:.8rem}
-.more[open] summary:after{content:"▲"}
-.more-content p{margin:0 0 12px}
+.lead{margin:0 0 12px}
+p{margin:0 0 16px}
 
 /* Formulär – svart text, transparenta fält */
 .form-wrap{margin:32px 0 40px}
-.form-wrap form{display:grid;gap:10px;max-width:560px}
-label{font-weight:600}
+.contact-form{display:grid;gap:16px}
+.form-grid{display:grid;grid-template-columns:1fr;gap:16px}
+label{font-weight:600;display:block;margin:0 0 8px}
 input{
-  padding:10px 12px;
-  border:1.5px solid var(--border);
-  border-radius:6px;
-  background:transparent;
+  width:100%;
+  padding:14px 16px;
+  border:1px solid #e6e6e6;
+  border-radius:10px;
+  background:#f7f7f7;
   color:var(--text);
-  font-size:1rem;
+  font-size:inherit;
 }
-.ghost-btn{
-  padding:12px 14px; background:transparent; color:var(--text);
-  border:2px solid var(--border); border-radius:6px; font-weight:700; cursor:pointer;
+input:focus{outline:2px solid #111; outline-offset:2px; background:#fff}
+.primary-btn{
+  padding:16px 18px; background:#2f2f30; color:#fff;
+  border:none; border-radius:999px; font-weight:700; cursor:pointer; width:100%; font-size:inherit;
 }
-.ghost-btn:hover{filter:brightness(0.9)}
+.primary-btn:hover{filter:brightness(0.95)}
 .hp{position:absolute;left:-9999px}
 
-/* Katten nere till höger */
-.corner-cat{
-  position:fixed; right:24px; bottom:24px;
-  width:clamp(140px, 22vw, 380px); height:auto;
-  pointer-events:none; user-select:none; z-index:0;
-}
+/* Katten ligger nu som bakgrundsbild på body */
 
 /* lite luft på mobil */
 @media (max-width:700px){
   .container{margin:32px auto 48px}
-  .corner-cat{right:12px; bottom:12px; width:clamp(120px, 28vw, 260px)}
+  body{background-position:right 12px bottom 56px; background-size:clamp(120px, 28vw, 260px)}
+}
+@media (min-width:720px){
+  .form-grid{grid-template-columns:1fr 1fr}
 }

@@ -5,60 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bygg ditt varumärke med AI</title>
   <meta name="description" content="Onlinekurs för företagare. Lär dig använda ChatGPT för att utveckla ditt varumärke och skapa träffsäker kommunikation. Intresseanmälan öppen." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="container">
+    <div class="content-card">
     <header>
-      <h1>Bygg ditt varumärke med AI</h1>
-      <p class="lead">
-        Att nå ut till sina kunder är en av de stora utmaningarna för företagare. Ett starkt varumärke kan göra skillnaden, och med AI har du i dag ett av de mest kraftfulla verktygen för att lyckas. I den här onlinekursen lär du dig använda ChatGPT för att utveckla ditt varumärke och skapa kommunikation som träffar rätt.
-      </p>
+      <h1>Kurs: Bygg ditt varumärke med AI</h1>
+      <p class="lead">Att nå ut till sina kunder är en av de stora utmaningarna för företagare. Ett starkt varumärke kan göra skillnaden, och med AI har du i dag ett av dina mest kraftfulla verktyg för att lyckas.</p>
     </header>
 
-    <!-- Läs mer (expanderar resten av texten) -->
-    <details class="more">
-      <summary>Läs mer</summary>
-      <div class="more-content">
-        <p>
-          Under en inspirerande förmiddag varvar vi kort teori med praktiska övningar. Du får verktyg och insikter som gör det enklare att ta fram texter och visuellt material som stärker ditt varumärke. Inga förkunskaper krävs.
-        </p>
-        <p>
-          Jag som leder kursen heter Alexandra Kamis och har arbetat med varumärken, affärsutveckling och företagare i över femton år. I dag arbetar jag som rådgivare och AI facilitator för entreprenörer, och jag brinner för att visa hur AI kan hjälpa företagare att lyckas ännu bättre.
-        </p>
-        <p>
-          Just nu samlar vi in intresseanmälningar. Din anmälan är inte bindande. Kursen startar när vi är tillräckligt många deltagare.
-        </p>
-
-        <h2>Praktisk information</h2>
-        <p>
-          <strong>Tid:</strong> 09.00 till 12.00, vid flera tillfällen i november<br>
-          <strong>Plats:</strong> Online<br>
-          <strong>Antal platser:</strong> Max 30<br>
-          <strong>Pris:</strong> 1 500 kr + moms
-        </p>
-      </div>
-    </details>
+    <div class="intro">
+      <p>I den här onlinekursen lär du dig använda ChatGPT för att utveckla ditt varumärke och skapa kommunikation som träffar rätt. Under en inspirerande förmiddag varvar vi kort teori med praktiska övningar. Du får verktyg och insikter som gör det enklare att ta fram texter och visuellt material som stärker ditt varumärke. Inga förkunskaper krävs.</p>
+      <p>Jag som leder kursen heter Alexandra Kamis och har arbetat med kommunikation, affärsutveckling och företagare i över femton år. I dag är jag rådgivare med fokus på hur AI kan hjälpa företagare i praktiken.</p>
+      <p>Kursen hålls online i november och kostar 1 500 kr + moms. Din intresseanmälan är inte bindande. Varmt välkommen!</p>
+    </div>
 
     <!-- Intresseanmälan (Netlify Forms) -->
     <section class="form-wrap">
-      <h2>Anmäl intresse</h2>
-      <form name="kursintresse" method="POST" action="/tack/" data-netlify="true" netlify-honeypot="bot-field">
+      <form class="contact-form" name="kursintresse" method="POST" action="/tack/" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="kursintresse" />
         <p class="hp" aria-hidden="true">
           <label>Fyll inte i detta: <input name="bot-field" /></label>
         </p>
 
-        <label for="name">Namn</label>
-        <input id="name" name="name" autocomplete="name" required />
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Namn</label>
+            <input id="name" name="name" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="email">E-post</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+        </div>
 
-        <label for="email">E-post</label>
-        <input id="email" name="email" type="email" autocomplete="email" required />
-
-        <button type="submit" class="ghost-btn">Skicka intresseanmälan</button>
+        <button type="submit" class="primary-btn">Anmäl intresse nu!</button>
       </form>
     </section>
-<img class="corner-cat" src="../images/cat.png" alt="" aria-hidden="true">
+    </div>
   </main>
 </body>
 </html>
