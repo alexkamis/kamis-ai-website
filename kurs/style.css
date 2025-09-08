@@ -25,6 +25,8 @@ h1{margin:0 0 12px 0;font-size:clamp(36px, 6.5vw, 70px);line-height:1.15}
 h2{margin:24px 0 8px 0}
 .lead{margin:0 0 12px}
 p{margin:0 0 16px}
+a{color:var(--text); text-decoration:none; font-weight:700}
+a:hover{text-decoration:underline}
 
 /* Formulär – svart text, transparenta fält */
 .form-wrap{margin:32px 0 40px}
